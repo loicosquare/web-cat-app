@@ -10,13 +10,17 @@
         type="text"
         class="form-control"
         formControlName="name"
-        [ngClass]="{ 'is-invalid': productFormGroup.controls.name.errors }"
+        [ngClass]="{
+          'is-invalid': submitted && productFormGroup.controls.name.errors
+        }"
       />
       <div
-        *ngIf="productFormGroup.controls.name.errors"
+        *ngIf="submitted && productFormGroup.controls.name.errors"
         class="invalid-feedback"
       >
-        <div *ngIf="productFormGroup.controls.name.errors.required">
+        <div
+          *ngIf="submitted && productFormGroup.controls.name.errors.required"
+        >
           Name is Required
         </div>
       </div>
