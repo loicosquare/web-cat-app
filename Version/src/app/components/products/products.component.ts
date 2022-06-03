@@ -12,10 +12,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-   products$:Observable<AppDataState<Product[]>> |null=null;
-   readonly DataStateEnum=DataStateEnum;
+  
+  products$: Observable<AppDataState<Product[]>> |null=null;
+  readonly DataStateEnum=DataStateEnum;
 
-   constructor(private productsService:ProductsService, private router:Router) { }
+  constructor(private productsService:ProductsService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -96,6 +97,9 @@ export class ProductsComponent implements OnInit {
       case ProductActionsTypes.GET_AVALAIBLE_PRODUCTS: this.onGetAvailableProducts(); break;
       case ProductActionsTypes.SEARCH_PRODUCTS: this.onSearch($event.payload); break;
       case ProductActionsTypes.NEW_PRODUCTS: this.onNewProduct(); break;
+      case ProductActionsTypes.SELECT_PRODUCTS: this.onSelect($event.payload); break;
+      case ProductActionsTypes.EDIT_PRODUCT: this.onEdit($event.payload); break;
+      case ProductActionsTypes.DELETE_PRODUCT: this.onDelete($event.payload); break;
     }
   }
 }
