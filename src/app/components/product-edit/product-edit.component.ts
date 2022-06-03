@@ -22,14 +22,14 @@ export class ProductEditComponent implements OnInit {
     this.productsService.getProduct(this.productId)
       .subscribe(product=>{
         this.productFormGroup=this.fb.group({
-          id:[product.id,Validators.required],
-          name:[product.name,Validators.required],
-          price:[product.price,Validators.required],
-          quantity:[product.quantity,Validators.required],
-          selected:[product.selected,Validators.required],
-          available:[product.available,Validators.required]
-        })
-      });
+        id:[product.id,Validators.required],
+        name:[product.name,Validators.required],
+        price:[product.price,Validators.required],
+        quantity:[product.quantity,Validators.required],
+        selected:[product.selected,Validators.required],
+        available:[product.available,Validators.required]
+      })
+    });
   }
 
   onUpdateProduct() {
