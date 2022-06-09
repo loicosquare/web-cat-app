@@ -12,6 +12,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductNavbarComponent } from './components/products/product-navbar/product-navbar.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { ProductItemComponent } from './components/products/product-list/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductListComponent } from './components/products/product-list/product
     ProductAddComponent,
     ProductEditComponent,
     ProductNavbarComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductItemComponent,
   ],
   imports: [
     BrowserModule,

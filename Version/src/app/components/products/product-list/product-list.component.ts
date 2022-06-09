@@ -38,4 +38,8 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  onActionEvent($event: ActionEvent){
+    this.productsEventEmitter.emit($event);
+  }
+
 }
